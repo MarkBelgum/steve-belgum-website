@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
+import { useState, useEffect, useRef, createContext } from 'react';
 import { Menu, X, Heart, Target, Users, Book, ChevronRight, Sun, Moon } from 'lucide-react';
 import './App.css';
 
