@@ -372,6 +372,45 @@ const Services = () => {
   );
 };
 
+// Approach Step Component
+const ApproachStep = ({ step, index }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const stepRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (stepRef.current) {
+      observer.observe(stepRef.current);
+    }
+
+    return () => {
+      if (stepRef.current) {
+        observer.unobserve(stepRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div 
+      ref={stepRef}
+      className={`approach-step ${isVisible ? 'visible' : ''}`}
+      style={{ transitionDelay: `${index * 200}ms` }}
+    >
+      <div className="step-number">{step.num}</div>
+      <h3>{step.title}</h3>
+      <p>{step.desc}</p>
+    </div>
+  );
+};
+
 // Approach Component
 const Approach = () => {
   const steps = [
@@ -384,44 +423,9 @@ const Approach = () => {
     <Section id="approach" bgColor="bg-white">
       <SectionHeader title="My Approach" />
       <div className="approach-grid">
-        {steps.map((step, index) => {
-          const [isVisible, setIsVisible] = useState(false);
-          const stepRef = useRef(null);
-
-          useEffect(() => {
-            const observer = new IntersectionObserver(
-              ([entry]) => {
-                if (entry.isIntersecting) {
-                  setIsVisible(true);
-                }
-              },
-              { threshold: 0.1 }
-            );
-
-            if (stepRef.current) {
-              observer.observe(stepRef.current);
-            }
-
-            return () => {
-              if (stepRef.current) {
-                observer.unobserve(stepRef.current);
-              }
-            };
-          }, []);
-
-          return (
-            <div 
-              key={index} 
-              ref={stepRef}
-              className={`approach-step ${isVisible ? 'visible' : ''}`}
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              <div className="step-number">{step.num}</div>
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
-            </div>
-          );
-        })}
+        {steps.map((step, index) => (
+          <ApproachStep key={index} step={step} index={index} />
+        ))}
       </div>
     </Section>
   );
