@@ -9,8 +9,7 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
       <div className="app">
-        <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
-        <Navigation />
+        <Navigation isDark={isDark} toggleTheme={toggleTheme} />
         <Hero />
         <About />
         <CouplesCoaching />

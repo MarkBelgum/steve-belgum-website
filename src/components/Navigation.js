@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -8,7 +9,7 @@ const scrollToSection = (id) => {
   }
 };
 
-const Navigation = () => {
+const Navigation = ({ isDark, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   
   const navItems = [
@@ -39,6 +40,7 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
           </div>
           
           <button 
@@ -58,6 +60,7 @@ const Navigation = () => {
             >
               {item.label}
             </button>
+            // todo: add theme button to mobile
           ))}
         </div>
       </div>
