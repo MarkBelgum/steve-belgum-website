@@ -8,7 +8,6 @@ export const aboutPage = [
     title: 'Listen & Understand', desc: "I'm Steve Belgum, a seasoned business leader and U.S. Marine Corps veteran. I provide customized coaching solutions for people like you." +
       " Married to Lynda for 32 years, I've gained insights into the challenges and joys of marriage. I specialize in helping couples find fullfillment in their relationships and helping veterans reintegrate into civilian life."
   },
-  // { title: 'Take Action', desc: "We'll work through challenges, celebrate victories, and build the purposeful life you're called to live." }
 ];
 
 export const coreValues = [
@@ -78,20 +77,20 @@ export const heroContent = {
 };
 
 export const navigationContent = {
-  logo: "Steve Belgum",
+  logo: "sentinel",
   items: [
     { label: 'About', path: '/', id: 'about' },
     { label: 'Couples Coaching', path: '/couples-coaching' },
     { label: 'Veteran Coaching', path: '/veteran-coaching' },
     { label: 'Contact', id: 'contact' },
-    { label: 'Travel With Purpose', path: '/travel-with-purpose' },
+    { label: '✈️', path: '/travel-with-purpose' },
   ]
 };
 
 export const footerContent = {
-  copyright: "© 2026 Steve Belgum Life Coaching. All rights reserved.",
-  tagline: "Serving veterans and couples with faith, honor, and purpose.",
-  credit: "Website created by Mark Belgum."
+  copyright: "© 2026 Steve Belgum. All rights reserved",
+  tagline: "Serving veterans and couples with faith, honor, and purpose",
+  credit: "Website created by Mark Belgum"
 };
 
 export const contactPageContent = {
