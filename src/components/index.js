@@ -1,6 +1,7 @@
 export { default as About } from './About';
 export { default as Approach } from './Approach';
 export { default as ApproachStep } from './ApproachStep';
+export { default as BookLink } from './BookLink';
 export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Contact } from './Contact';
@@ -12,3 +13,4 @@ export { default as Section } from './Section';
 export { default as SectionHeader } from './SectionHeader';
 export { default as Services } from './Services';
 export { default as ThemeToggle } from './ThemeToggle';
+export { default as Travel } from './Travel';

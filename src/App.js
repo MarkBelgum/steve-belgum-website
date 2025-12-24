@@ -1,23 +1,64 @@
-import { About, Approach, Contact, CouplesCoaching, Footer, Hero, Navigation, Services } from './components';
-import { ThemeContext } from './theme/ThemeContext';
-import { useTheme } from './theme/useTheme';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { About, Approach, BookLink, Contact, CouplesCoaching, Footer, Hero, Navigation, Services, Travel } from './components';
 import './App.css';
 
-export default function App() {
-  const { isDark, toggleTheme } = useTheme();
+const AppContent = () => {
+  const location = useLocation();
+  const [themeClass, setThemeClass] = useState(() => {
+    if (location.pathname === '/couples-coaching') return 'theme-couples';
+    if (location.pathname === '/veteran-coaching') return 'theme-veteran';
+    return '';
+  });
+
+  useEffect(() => {
+    if (location.pathname === '/couples-coaching') {
+      setThemeClass('theme-couples');
+    } else if (location.pathname === '/veteran-coaching') {
+      setThemeClass('theme-veteran');
+    }
+  }, [location.pathname]);
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      <div className="app">
-        <Navigation isDark={isDark} toggleTheme={toggleTheme} />
-        <Hero />
-        <About />
-        <CouplesCoaching />
-        <Services />
-        <Approach />
-        <Contact />
-        <Footer />
-      </div>
-    </ThemeContext.Provider>
+    <div className={`app ${themeClass}`}>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <About />
+            <Approach />
+            <Contact />
+          </>
+        } />
+        <Route path="/couples-coaching" element={
+          <>
+            <CouplesCoaching />
+            <Contact />
+          </>
+        } />
+        <Route path="/veteran-coaching" element={
+          <>
+            <Services />
+            <Contact />
+          </>
+        } />
+        <Route path="/travel-with-purpose" element={
+          <>
+            <Travel />
+            <BookLink />
+          </>
+        } />
+      </Routes>
+      <Footer />
+    </div>
+  );
+};
+
+export default function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }

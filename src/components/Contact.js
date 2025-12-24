@@ -10,15 +10,8 @@ const Contact = () => {
         </p>
         <div className="contact-info">
           <div className="contact-item">
-            <p>Email</p>
-            <a href="mailto:steve@stevebelgum.com">
-              steve@stevebelgum.com
-            </a>
-          </div>
-          <div className="contact-item">
-            <p>Phone</p>
-            <a href="tel:+15551234567">
-              (555) 123-4567
+            <a href="https://docs.google.com/forms/d/1VwmxQI2TTV2qKhpFGYhYS0q1bHRuk2rMRtKt9w-xtGQ/edit" target="_blank" rel="noopener noreferrer">
+              Contact Form
             </a>
           </div>
         </div>

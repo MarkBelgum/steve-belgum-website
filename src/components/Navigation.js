@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -9,38 +9,56 @@ const scrollToSection = (id) => {
   }
 };
 
-const Navigation = ({ isDark, toggleTheme }) => {
+const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
-    { label: 'About', id: 'about' },
-    { label: 'Couples Coaching', id: 'couples-coaching' },
-    { label: 'Veteran Coaching', id: 'veteran-coaching' },
-    { label: 'Contact', id: 'contact' }
+    { label: 'About', path: '/', id: 'about' },
+    { label: 'Couples Coaching', path: '/couples-coaching' },
+    { label: 'Veteran Coaching', path: '/veteran-coaching' },
+    { label: 'Contact', id: 'contact' },
+    { label: 'Travel With Purpose', path: '/travel-with-purpose' },
   ];
 
-  const handleNavClick = (id) => {
-    scrollToSection(id);
+  const handleNavClick = (item) => {
     setIsOpen(false);
+
+    if (item.path) {
+      if (location.pathname !== item.path) {
+        navigate(item.path);
+        if (item.id) {
+          setTimeout(() => scrollToSection(item.id), 100);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      } else if (item.id) {
+        scrollToSection(item.id);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    } else if (item.id) {
+      scrollToSection(item.id);
+    }
   };
 
   return (
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-header">
-          <div className="logo">Steve Belgum</div>
+          <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>Steve Belgum</div>
 
           <div className="nav-desktop">
             {navItems.map((item, index) => (
               <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
+                key={item.label}
+                onClick={() => handleNavClick(item)}
                 className="nav-link"
               >
                 {item.label}
               </button>
             ))}
-            <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
           </div>
 
           <button
@@ -54,8 +72,8 @@ const Navigation = ({ isDark, toggleTheme }) => {
         <div className={`nav-mobile ${isOpen ? 'open' : ''}`}>
           {navItems.map(item => (
             <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              key={item.label}
+              onClick={() => handleNavClick(item)}
               className="nav-link-mobile"
             >
               {item.label}
