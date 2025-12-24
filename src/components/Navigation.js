@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { navigationContent } from '../data/content';
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -14,13 +15,7 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const navItems = [
-    { label: 'About', path: '/', id: 'about' },
-    { label: 'Couples Coaching', path: '/couples-coaching' },
-    { label: 'Veteran Coaching', path: '/veteran-coaching' },
-    { label: 'Contact', id: 'contact' },
-    { label: 'Travel With Purpose', path: '/travel-with-purpose' },
-  ];
+  const navItems = navigationContent.items;
 
   const handleNavClick = (item) => {
     setIsOpen(false);
@@ -47,7 +42,7 @@ const Navigation = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-header">
-          <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>Steve Belgum</div>
+          <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>{navigationContent.logo}</div>
 
           <div className="nav-desktop">
             {navItems.map((item, index) => (

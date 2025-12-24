@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
+import { heroContent } from '../data/content';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -19,17 +20,17 @@ const Hero = () => {
         style={{ transform: `translateY(${offsetY * 0.5}px)` }}
       />
       <div className="hero-content">
-        <h1 className="animate-fade-in-up">Developing Leaders </h1>
-        <h2 className="animate-fade-in-up">by Mentoring and Coaching</h2>
+        <h1 className="animate-fade-in-up">{heroContent.titleLine1}</h1>
+        <h2 className="animate-fade-in-up">{heroContent.titleLine2}</h2>
         <p className="animate-fade-in-up-delay">
-          Helping young couples and veterans find clarity, purpose, and confidence
+          {heroContent.subtitle}
         </p>
         <div className="hero-buttons animate-fade-in-up-delay-2">
           <Button variant="outline" onClick={() => navigate('/couples-coaching')}>
-            Couples Coaching
+            {heroContent.buttonCouples}
           </Button>
           <Button variant="secondary" onClick={() => navigate('/veteran-coaching')}>
-            Veterans Coaching
+            {heroContent.buttonVeterans}
           </Button>
         </div>
       </div>

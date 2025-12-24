@@ -1,17 +1,17 @@
 import Section from './Section';
-import { bookUrl } from '../data/content';
+import { bookUrl, bookLinkTitle, bookLinkText } from '../data/content';
 
 const BookLink = () => {
   return (
     <Section id="bookLink" bgColor="bg-blue" className="contact-section">
       <div className="contact-content">
         <h2 className="contact-subtitle">
-          Check out my upcoming book
+          {bookLinkTitle}
         </h2>
         <div className="contact-info">
           <div className="contact-item">
             <a href={bookUrl} target="_blank" rel="noopener noreferrer">
-              Amazon
+              {bookLinkText}
             </a>
           </div>
         </div>

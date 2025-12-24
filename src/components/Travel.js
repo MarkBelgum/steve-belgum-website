@@ -1,17 +1,16 @@
 import Section from './Section';
 import SectionHeader from './SectionHeader';
-import Card from './Card';
-import { couplesServices } from '../data/content';
+import { travelPageContent } from '../data/content';
 
 const Travel = () => {
   return (
     <Section id="travel" bgColor="bg-white">
       <SectionHeader
-        title="Ready to Travel with a Purpose?"
+        title={travelPageContent.title}
       />
       <div className="service-description">
         <p>
-          What is Travel with a Purpose?
+          {travelPageContent.description}
         </p>
       </div>
     </Section>

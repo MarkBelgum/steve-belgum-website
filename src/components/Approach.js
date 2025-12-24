@@ -1,12 +1,12 @@
 import Section from './Section';
 import SectionHeader from './SectionHeader';
 import ApproachStep from './ApproachStep';
-import { approachSteps } from '../data/content';
+import { approachSteps, approachTitle } from '../data/content';
 
 const Approach = () => {
   return (
     <Section id="approach" bgColor="bg-white">
-      <SectionHeader title="My Approach" />
+      <SectionHeader title={approachTitle} />
       <div className="approach-grid">
         {approachSteps.map((step, index) => (
           <ApproachStep key={index} step={step} index={index} />
