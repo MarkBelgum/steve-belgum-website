@@ -1,32 +1,9 @@
-import { Heart, Target, Users, Book } from 'lucide-react';
 import Section from './Section';
 import SectionHeader from './SectionHeader';
 import Card from './Card';
+import { veteranServices } from '../data/content';
 
 const Services = () => {
-  const veteranServices = [
-    {
-      icon: Target,
-      title: 'Transition Planning',
-      description: 'Strategic guidance for moving from military to civilian life, including career planning, education, and finding your new mission.'
-    },
-    {
-      icon: Heart,
-      title: 'Faith Integration',
-      description: 'Discover how your Christian faith can be the anchor during transition, providing peace, direction, and renewed purpose.'
-    },
-    {
-      icon: Users,
-      title: 'Identity & Purpose',
-      description: 'Navigate the shift from military identity to civilian life while maintaining the discipline, honor, and sense of purpose that defined your service.'
-    },
-    {
-      icon: Book,
-      title: 'Personal Development',
-      description: 'Set meaningful goals, develop new skills, and create a roadmap for the next chapter of your life.'
-    }
-  ];
-
   return (
     <Section id="veteran-coaching" bgColor="bg-gray">
       <SectionHeader

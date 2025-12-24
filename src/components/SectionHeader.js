@@ -1,29 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const SectionHeader = ({ title, subtitle }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const headerRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (headerRef.current) {
-      observer.observe(headerRef.current);
-    }
-
-    return () => {
-      if (headerRef.current) {
-        observer.unobserve(headerRef.current);
-      }
-    };
-  }, []);
+  const [headerRef, isVisible] = useScrollAnimation();
 
   return (
     <div ref={headerRef} className={`section-header ${isVisible ? 'visible' : ''}`}>

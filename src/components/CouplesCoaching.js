@@ -1,32 +1,9 @@
-import { Heart, Users, Target, Book } from 'lucide-react';
 import Section from './Section';
 import SectionHeader from './SectionHeader';
 import Card from './Card';
+import { couplesServices } from '../data/content';
 
 const CouplesCoaching = () => {
-  const couplesServices = [
-    {
-      icon: Heart,
-      title: 'Biblical Foundation',
-      description: 'Build your marriage on Christ-centered principles that provide stability, purpose, and lasting joy through all seasons.'
-    },
-    {
-      icon: Users,
-      title: 'Communication Skills',
-      description: 'Learn healthy communication patterns, active listening, and conflict resolution strategies that strengthen your bond.'
-    },
-    {
-      icon: Target,
-      title: 'Shared Vision & Goals',
-      description: 'Align your dreams, set mutual goals, and create a compelling vision for your life together.'
-    },
-    {
-      icon: Book,
-      title: 'Premarital & Early Marriage',
-      description: 'Navigate the critical early years with tools for financial planning, intimacy, roles, and building strong habits together.'
-    }
-  ];
-
   return (
     <Section id="couples-coaching" bgColor="bg-white">
       <SectionHeader
