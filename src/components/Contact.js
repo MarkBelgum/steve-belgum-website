@@ -1,12 +1,6 @@
-import useState from 'react';
 import Section from './Section';
-import ContactEmail from './ContactEmail';
-
-
 
 const Contact = () => {
-  const [show, setShow] = useState(false);
-
   return (
     <Section id="contact" bgColor="bg-blue" className="contact-section">
       <div className="contact-content">
@@ -15,7 +9,12 @@ const Contact = () => {
           Whether you're a veteran seeking purpose in civilian life or a couple building a strong marriage foundation, let's talk about how I can support your journey.
         </p>
         <div className="contact-info">
-          <ContactEmail show={show} />
+          <div className="contact-item">
+            <p>Email</p>
+            <a href="mailto:steve@stevebelgum.com">
+              steve@stevebelgum.com
+            </a>
+          </div>
           <div className="contact-item">
             <p>Phone</p>
             <a href="tel:+15551234567">

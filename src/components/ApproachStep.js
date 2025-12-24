@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const ApproachStep = ({ step, index }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,7 +26,7 @@ const ApproachStep = ({ step, index }) => {
   }, []);
 
   return (
-    <div 
+    <div
       ref={stepRef}
       className={`approach-step ${isVisible ? 'visible' : ''}`}
       style={{ transitionDelay: `${index * 200}ms` }}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Button from './Button';
 
 const scrollToSection = (id) => {
@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <div className="hero">
-      <div 
+      <div
         className="hero-overlay"
         style={{ transform: `translateY(${offsetY * 0.5}px)` }}
       />

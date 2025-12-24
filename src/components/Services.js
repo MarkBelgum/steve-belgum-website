@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, Target, Users, Book } from 'lucide-react';
 import Section from './Section';
 import SectionHeader from './SectionHeader';
@@ -30,7 +29,7 @@ const Services = () => {
 
   return (
     <Section id="veteran-coaching" bgColor="bg-gray">
-      <SectionHeader 
+      <SectionHeader
         title="Veteran Coaching"
         subtitle="Specialized coaching designed for veterans of all branches transitioning to civilian life"
       />

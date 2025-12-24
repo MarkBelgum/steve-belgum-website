@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, Users, Target, Book } from 'lucide-react';
 import Section from './Section';
 import SectionHeader from './SectionHeader';
@@ -30,7 +29,7 @@ const CouplesCoaching = () => {
 
   return (
     <Section id="couples-coaching" bgColor="bg-white">
-      <SectionHeader 
+      <SectionHeader
         title="Couples Coaching"
         subtitle="Building strong, Christ-centered marriages for young couples"
       />

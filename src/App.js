@@ -1,4 +1,4 @@
-import { About, Approach, Contact, CouplesCoaching, Footer, Hero, Navigation, Services, ThemeToggle } from './components';
+import { About, Approach, Contact, CouplesCoaching, Footer, Hero, Navigation, Services } from './components';
 import { ThemeContext } from './theme/ThemeContext';
 import { useTheme } from './theme/useTheme';
 import './App.css';

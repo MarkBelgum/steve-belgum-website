@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
@@ -11,14 +11,14 @@ const scrollToSection = (id) => {
 
 const Navigation = ({ isDark, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const navItems = [
     { label: 'About', id: 'about' },
     { label: 'Couples Coaching', id: 'couples-coaching' },
     { label: 'Veteran Coaching', id: 'veteran-coaching' },
     { label: 'Contact', id: 'contact' }
   ];
-  
+
   const handleNavClick = (id) => {
     scrollToSection(id);
     setIsOpen(false);
@@ -29,7 +29,7 @@ const Navigation = ({ isDark, toggleTheme }) => {
       <div className="nav-container">
         <div className="nav-header">
           <div className="logo">Steve Belgum</div>
-          
+
           <div className="nav-desktop">
             {navItems.map((item, index) => (
               <button
@@ -42,15 +42,15 @@ const Navigation = ({ isDark, toggleTheme }) => {
             ))}
             <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
           </div>
-          
-          <button 
+
+          <button
             className="mobile-menu-btn"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        
+
         <div className={`nav-mobile ${isOpen ? 'open' : ''}`}>
           {navItems.map(item => (
             <button

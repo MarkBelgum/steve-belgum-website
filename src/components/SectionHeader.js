@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const SectionHeader = ({ title, subtitle }) => {
   const [isVisible, setIsVisible] = useState(false);
