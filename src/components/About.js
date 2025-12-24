@@ -1,20 +1,15 @@
 import { ChevronRight } from 'lucide-react';
 import Section from './Section';
+import { aboutPage } from '../data/content';
 
 const About = () => (
   <Section id="about" bgColor="bg-gray">
     <div className="about-grid">
       <div className="about-text">
         <h2>About Steve</h2>
-        <p>
-          As a Christian life coach, I'm passionate about serving two distinct communities: veterans transitioning to civilian life and young couples building strong foundations for their marriages.
-        </p>
-        <p>
-          Whether you're a veteran navigating the challenges of coming home or a couple learning to grow together in faith and partnership, I'm here to provide guidance, accountability, and support rooted in Christian principles.
-        </p>
-        <p>
-          Together, we'll work through challenges, celebrate victories, and build the purposeful life you're called to live.
-        </p>
+        {aboutPage.map((step, index) => (
+          <p key={index}>{step.desc}</p>
+        ))}
       </div>
       <div className="core-values">
         <h3>Core Values</h3>

@@ -9,6 +9,15 @@
   --gray-bg: #f9fafb;
   --text-main: #1f2937;
   --text-muted: #4b5563;
+  --text-nav: #374151;
+  --bg-secondary-hover: #eff6ff;
+  --hero-gradient-end: #54490e;
+  --hero-overlay-start: rgba(96, 165, 250, 0.2);
+  --text-accent-light: #bfdbfe;
+  --bg-icon-default: #dbeafe;
+  --white-pure: #ffffff;
+  --footer-bg: #111827;
+  --footer-text: #9ca3af;
 }
 
 .theme-couples {
@@ -77,18 +86,12 @@ body {
 
 /* Navigation */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background-image: url('./camouflage-fabric-light-brown-208169.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* Optional overlay for readability */
-  background-color: var(--tan);
-  background-blend-mode: overlay;
+  background: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 40;
+  transition: background-color 0.3s;
 }
 
 .theme-couples .navbar {
@@ -128,7 +131,7 @@ body {
 .nav-link {
   background: none;
   border: none;
-  color: #374151;
+  color: var(--text-nav);
   font-weight: 500;
   cursor: pointer;
   font-size: 16px;
@@ -145,7 +148,7 @@ body {
   display: flex;
   background: none;
   border: none;
-  color: #374151;
+  color: var(--text-nav);
   cursor: pointer;
   transition: color 0.3s;
 }
@@ -174,7 +177,7 @@ body {
 .nav-link-mobile {
   background: none;
   border: none;
-  color: #374151;
+  color: var(--text-nav);
   font-weight: 500;
   cursor: pointer;
   font-size: 16px;
@@ -216,7 +219,7 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #eff6ff;
+  background: var(--bg-secondary-hover);
 }
 
 .btn-outline {
@@ -232,7 +235,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to bottom right, var(--primary), #54490e);
+  background: linear-gradient(to bottom right, var(--primary), var(--hero-gradient-end));
   color: var(--white);
   padding: 128px 24px 80px;
   position: relative;
@@ -243,7 +246,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom right, rgba(96, 165, 250, 0.2), transparent);
+  background: linear-gradient(to bottom right, var(--hero-overlay-start), transparent);
   transition: background 0.5s;
 }
 
@@ -275,7 +278,7 @@ body {
 .hero p {
   font-size: 20px;
   margin-bottom: 32px;
-  color: #bfdbfe;
+  color: var(--text-accent-light);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -380,13 +383,13 @@ body {
 .about-text h2 {
   font-size: 36px;
   font-weight: bold;
-  color: #1f2937;
+  color: var(--text-main);
   margin-bottom: 24px;
 }
 
 .about-text p {
   font-size: 18px;
-  color: #4b5563;
+  color: var(--text-muted);
   margin-bottom: 16px;
   line-height: 1.8;
 }
@@ -479,7 +482,7 @@ body {
 }
 
 .card-icon {
-  background: #dbeafe;
+  background: var(--bg-icon-default);
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -493,6 +496,11 @@ body {
 
 .card:hover .card-icon {
   transform: scale(1.1) rotate(6deg);
+}
+
+.theme-couples .card-icon {
+  background: var(--primary);
+  color: var(--white-pure);
 }
 
 .card h3 {
@@ -534,7 +542,7 @@ body {
 .step-number {
   font-size: 64px;
   font-weight: bold;
-  color: #bfdbfe;
+  color: var(--text-accent-light);
   margin-bottom: 16px;
 }
 
@@ -575,7 +583,7 @@ body {
 .contact-subtitle {
   font-size: 20px;
   margin-bottom: 32px;
-  color: #bfdbfe;
+  color: var(--text-accent-light);
 }
 
 .contact-info {
@@ -606,13 +614,13 @@ body {
 }
 
 .contact-item a:hover {
-  color: #bfdbfe;
+  color: var(--text-accent-light);
 }
 
 /* Footer */
 .footer {
-  background: #111827;
-  color: #9ca3af;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding: 32px 24px;
   transition: background-color 0.3s;
 }

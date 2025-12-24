@@ -1,4 +1,5 @@
 import Section from './Section';
+import { contactUrl } from '../data/content';
 
 const Contact = () => {
   return (
@@ -10,7 +11,7 @@ const Contact = () => {
         </p>
         <div className="contact-info">
           <div className="contact-item">
-            <a href="https://docs.google.com/forms/d/1VwmxQI2TTV2qKhpFGYhYS0q1bHRuk2rMRtKt9w-xtGQ/edit" target="_blank" rel="noopener noreferrer">
+            <a href={contactUrl} target="_blank" rel="noopener noreferrer">
               Contact Form
             </a>
           </div>

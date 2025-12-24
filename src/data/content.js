@@ -1,5 +1,19 @@
 import { Heart, Users, Target, Book } from 'lucide-react';
 
+export const aboutPage = [
+  {
+    title: 'Listen & Understand', desc: "I'm Steve Belgum, a seasoned business leader and U.S. Marine Corps veteran. I provide customized coaching solutions for people like you." +
+      " Married to Lynda for 32 years, I've gained insights into the challenges and joys of marriage. I specialize in helping veterans reintegrate into civilian life, and helping couples find fullfillment in their relationships."
+  },
+  // { title: 'Take Action', desc: "We'll work through challenges, celebrate victories, and build the purposeful life you're called to live." }
+];
+
+export const approachSteps = [
+  { title: 'Listen & Understand', desc: 'Every person\'s story is unique. We start by understanding your experiences, challenges, and goals.' },
+  { title: 'Ask Good Questions', desc: 'Together, we create a faith-centered roadmap tailored to your specific needs and aspirations.' },
+  { title: 'Take Action', desc: 'With accountability and support, we execute your plan one step at a time, celebrating progress along the way.' }
+];
+
 export const couplesServices = [
   {
     icon: Heart,
@@ -46,8 +60,6 @@ export const veteranServices = [
   }
 ];
 
-export const approachSteps = [
-  { title: 'Listen & Understand', desc: 'Every person\'s story is unique. We start by understanding your experiences, challenges, and goals.' },
-  { title: 'Ask Good Questions', desc: 'Together, we create a faith-centered roadmap tailored to your specific needs and aspirations.' },
-  { title: 'Take Action', desc: 'With accountability and support, we execute your plan one step at a time, celebrating progress along the way.' }
-];
+
+export const bookUrl = "https://www.amazon.com/Basics-of-Biblical-Greek-Vocabulary/dp/B000HZ72Q8/ref=tmm_aud_swatch_0";
+export const contactUrl = "https://docs.google.com/forms/d/1VwmxQI2TTV2qKhpFGYhYS0q1bHRuk2rMRtKt9w-xtGQ/edit";

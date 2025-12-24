@@ -1,4 +1,5 @@
 import Section from './Section';
+import { bookUrl } from '../data/content';
 
 const BookLink = () => {
   return (
@@ -9,7 +10,7 @@ const BookLink = () => {
         </h2>
         <div className="contact-info">
           <div className="contact-item">
-            <a href="https://www.amazon.com/Basics-of-Biblical-Greek-Vocabulary/dp/B000HZ72Q8/ref=tmm_aud_swatch_0" target="_blank" rel="noopener noreferrer">
+            <a href={bookUrl} target="_blank" rel="noopener noreferrer">
               Amazon
             </a>
           </div>
