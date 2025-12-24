@@ -1,6 +1,6 @@
 const Button = ({ children, variant = 'primary', onClick, className = '' }) => {
   return (
-    <button 
+    <button
       onClick={onClick}
       className={`btn btn-${variant} ${className}`}
     >

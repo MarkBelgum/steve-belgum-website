@@ -1,32 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Card = ({ icon: Icon, title, description, className = '', index = 0 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
+  const [cardRef, isVisible] = useScrollAnimation();
 
   return (
-    <div 
+    <div
       ref={cardRef}
       className={`card ${className} ${isVisible ? 'visible' : ''}`}
       style={{ transitionDelay: `${index * 150}ms` }}

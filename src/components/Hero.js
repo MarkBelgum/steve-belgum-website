@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 
-const scrollToSection = (id) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
 const Hero = () => {
+  const navigate = useNavigate();
   const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
@@ -19,21 +14,22 @@ const Hero = () => {
 
   return (
     <div className="hero">
-      <div 
+      <div
         className="hero-overlay"
         style={{ transform: `translateY(${offsetY * 0.5}px)` }}
       />
       <div className="hero-content">
-        <h1 className="animate-fade-in-up">Welcome Home, Warrior</h1>
+        <h1 className="animate-fade-in-up">Developing Leaders </h1>
+        <h2 className="animate-fade-in-up">by Mentoring and Coaching</h2>
         <p className="animate-fade-in-up-delay">
-          Faith-based life coaching to help veterans and young couples find purpose, clarity, and confidence
+          Helping young couples and veterans find clarity, purpose, and confidence
         </p>
         <div className="hero-buttons animate-fade-in-up-delay-2">
-          <Button variant="outline" onClick={() => scrollToSection('couples-coaching')}>
+          <Button variant="outline" onClick={() => navigate('/couples-coaching')}>
             Couples Coaching
           </Button>
-          <Button variant="secondary" onClick={() => scrollToSection('veteran-coaching')}>
-            Veteran Coaching
+          <Button variant="secondary" onClick={() => navigate('/veteran-coaching')}>
+            Veterans Coaching
           </Button>
         </div>
       </div>
