@@ -1,4 +1,3 @@
-import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Card = ({ icon: Icon, title, description, className = '', index = 0 }) => {

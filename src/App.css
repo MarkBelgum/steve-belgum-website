@@ -76,6 +76,7 @@ body {
   font-weight: bold;
   color: var(--primary);
   transition: color 0.3s;
+  cursor: pointer;
 }
 .nav-link, .nav-link-mobile, .mobile-menu-btn {
   background: none; border: none;

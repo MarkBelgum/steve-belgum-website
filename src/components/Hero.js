@@ -8,7 +8,7 @@ const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setOffsetY(window.pageYOffset);
+    const handleScroll = () => setOffsetY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
