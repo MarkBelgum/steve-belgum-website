@@ -5,7 +5,7 @@ import { veteranServices, veteranPageContent } from '../data/content';
 
 const Services = () => {
   return (
-    <Section id="veteran-coaching" bgColor="bg-gray">
+    <Section id="veteran-coaching">
       <SectionHeader
         title={veteranPageContent.title}
         subtitle={veteranPageContent.subtitle}

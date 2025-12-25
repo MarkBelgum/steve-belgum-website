@@ -4,7 +4,7 @@ import { travelPageContent } from '../data/content';
 
 const Travel = () => {
   return (
-    <Section id="travel" bgColor="bg-white">
+    <Section id="travel">
       <SectionHeader
         title={travelPageContent.title}
       />
