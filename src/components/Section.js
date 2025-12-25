@@ -1,13 +1,13 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const Section = ({ id, children, className = '', bgColor = 'bg-white' }) => {
+const Section = ({ id, children, className = '' }) => {
   const [sectionRef, isVisible] = useScrollAnimation();
 
   return (
     <section
       id={id}
       ref={sectionRef}
-      className={`section ${bgColor} ${className} ${isVisible ? 'visible' : ''}`}
+      className={`section ${className} ${isVisible ? 'visible' : ''}`}
     >
       <div className="container">
         {children}

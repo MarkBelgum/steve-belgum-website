@@ -5,7 +5,7 @@ import { approachSteps, approachTitle } from '../data/content';
 
 const Approach = () => {
   return (
-    <Section id="approach" bgColor="bg-white">
+    <Section id="approach">
       <SectionHeader title={approachTitle} />
       <div className="approach-grid">
         {approachSteps.map((step, index) => (

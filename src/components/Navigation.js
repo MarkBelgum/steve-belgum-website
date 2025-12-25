@@ -42,10 +42,11 @@ const Navigation = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-header">
-          <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>{navigationContent.logo}</div>
-
+          <div className="logo" onClick={() => navigate('/')}>
+            {navigationContent.logo}
+          </div>
           <div className="nav-desktop">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item)}
@@ -73,7 +74,6 @@ const Navigation = () => {
             >
               {item.label}
             </button>
-            // todo: add theme button to mobile
           ))}
         </div>
       </div>

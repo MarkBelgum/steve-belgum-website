@@ -3,7 +3,7 @@ import Section from './Section';
 import { aboutPage, coreValues, aboutTitle, coreValuesTitle } from '../data/content';
 
 const About = () => (
-  <Section id="about" bgColor="bg-gray">
+  <Section id="about">
     <div className="about-grid">
       <div className="about-text">
         <h2>{aboutTitle}</h2>

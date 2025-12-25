@@ -3,7 +3,7 @@ import { bookUrl, bookLinkTitle, bookLinkText } from '../data/content';
 
 const BookLink = () => {
   return (
-    <Section id="bookLink" bgColor="bg-blue" className="contact-section">
+    <Section id="bookLink" className="contact-section">
       <div className="contact-content">
         <h2 className="contact-subtitle">
           {bookLinkTitle}

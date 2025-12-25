@@ -3,7 +3,7 @@ import { contactUrl, contactPageContent } from '../data/content';
 
 const Contact = () => {
   return (
-    <Section id="contact" bgColor="bg-blue" className="contact-section">
+    <Section id="contact" className="contact-section">
       <div className="contact-content">
         <h2>{contactPageContent.title}</h2>
         <p className="contact-subtitle">
