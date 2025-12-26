@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
-import { heroContent } from '../data/content';
+import { heroContent, getContent } from '../data/content';
 
 const Hero = () => {
   const navigate = useNavigate();
   const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    getContent();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setOffsetY(window.scrollY);

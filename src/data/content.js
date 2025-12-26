@@ -1,4 +1,20 @@
 import { Heart, Users, Target, Book } from 'lucide-react';
+import { client } from './contentful';
+
+export async function getContent() {
+  if (!client) {
+    console.log('Contentful client not initialized. Missing environment variables.');
+    return null;
+  }
+  try {
+    const response = await client.getEntries();
+    console.log('Contentful Data:', response);
+    return response;
+  } catch (error) {
+    console.error('Error fetching Contentful data:', error);
+    return null;
+  }
+}
 
 export const aboutTitle = 'About Steve';
 export const coreValuesTitle = 'Core Values';
