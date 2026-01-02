@@ -1,6 +1,7 @@
 /* Variables & Base */
 :root {
   --white: #D6B588;
+  --card-bg: #D6B588;
   --tan: #D6B588;
   --primary: #4B5320;
   --primary-hover: #c5d81d;
@@ -9,6 +10,7 @@
   --gray-bg: #f9fafb;
   --text-main: #1f2937;
   --text-muted: #4b5563;
+  --text-card: #2c323a;
   --text-nav: #374151;
   --bg-secondary-hover: #eff6ff;
   --hero-gradient-end: #54490e;
@@ -21,10 +23,12 @@
 }
 
 .theme-couples {
-  --white: #fce7f3;
+  --white: #ffffff;
+  --card-bg: #be185d;
   --tan: #fbcfe8;
   --primary: #be185d;
   --primary-hover: #9d174d;
+  --text-card: #ffffff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -297,7 +301,7 @@ body {
 /* Cards & Grid */
 .cards-grid, .approach-grid { display: grid; gap: 32px; }
 .card {
-  background: var(--white);
+  background: var(--card-bg);
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -329,16 +333,15 @@ body {
   transform: scale(1.1) rotate(6deg);
 }
 .theme-couples .card-icon {
-  background: var(--primary);
-  color: var(--white-pure);
+  color: var(--primary);
 }
 .card h3 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 16px;
-  color: var(--text-main);
+  color: var(--text-card);
 }
-.card p, .approach-step p { color: var(--text-muted); line-height: 1.8; }
+.card p, .approach-step p { color: var(--text-card); line-height: 1.8; }
 
 /* Approach Section */
 .approach-step {
